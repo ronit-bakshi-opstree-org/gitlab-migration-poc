@@ -1,0 +1,3 @@
+[submodule "common-library"]
+	path = common-library
+	url = https://gitlab.com/sainiabhishek619/common-library.git
