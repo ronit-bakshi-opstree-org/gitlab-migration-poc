@@ -1,0 +1,11 @@
+image: alpine:3.20
+
+stages:
+  - test
+
+migration-smoke-test:
+  stage: test
+  script:
+    - test -s README.md
+    - test "$MIGRATION_TEST_BATCH_20261026_123611" = "20261026-123611"
+    - echo "Migration smoke test passed"
