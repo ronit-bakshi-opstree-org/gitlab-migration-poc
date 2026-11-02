@@ -1,0 +1,12 @@
+name: gitlab-mirror
+on:
+  schedule: [{cron: "*/15 * * * *"}]
+  workflow_dispatch:
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          git clone --mirror https://oauth2:${{ secrets.GITLAB_PAT }}@gitlab.com/sainiabhishek619/gitlab-migration-poc.git repo
+          cd repo
+          git push --mirror https://x-access-token:${{ secrets.GH_PAT }}@github.com/ronit-bakshi-opstree-org/gitlab-migration-poc.git
