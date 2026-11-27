@@ -19,8 +19,8 @@ jobs:
       image: alpine:3.20
     timeout-minutes: 60
     steps:
-    - name: Install git
-      run: apk add --no-cache git
+    - name: Install git and git-lfs
+      run: apk add --no-cache git git-lfs
     - uses: actions/checkout@v4.1.0
       with:
         fetch-depth: 20
