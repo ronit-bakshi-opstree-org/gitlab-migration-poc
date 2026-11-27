@@ -19,6 +19,8 @@ jobs:
       image: alpine:3.20
     timeout-minutes: 60
     steps:
+    - name: Install git
+      run: apk add --no-cache git
     - uses: actions/checkout@v4.1.0
       with:
         fetch-depth: 20
